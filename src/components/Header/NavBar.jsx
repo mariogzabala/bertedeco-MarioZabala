@@ -1,14 +1,13 @@
 import React from "react";
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "./CartWidget";
 import iconobd from '../../assets/img/brand/iconobd.png';
+import {NavLink, Link} from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/#">
-          <img src={iconobd} alt="iconobd" style={{ height:'120px'}}></img>
-        </a>
+        <Link to="/" className="navbar-brand"><img src={iconobd} alt="iconobd" style={{ height:'120px'}}></img></Link>        
         <button
           className="navbar-toggler"
           type="button"
@@ -22,42 +21,23 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/#">
-                Home
-              </a>
+            <li className="nav-item nav-link active" aria-current="page">
+              <NavLink to="/#">Home</NavLink>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/#">
-                Contacto
-              </a>
+            <li className="nav-item nav-link">
+              <NavLink to="/#">Contacto</NavLink>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="/#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categorias
-              </a>
+            <li className="nav-item dropdown nav-link dropdown-toggle" >
+              <NavLink to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</NavLink>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="/#">
-                    Mesas y Sillas
-                  </a>
+                <li className="dropdown-item">
+                  <NavLink to="/categoria/bancos">Bancos</NavLink>
                 </li>
-                <li>
-                  <a className="dropdown-item" href="/#">
-                    Bancos
-                  </a>
+                <li className="dropdown-item">
+                  <NavLink to="/categoria/mesas">Mesas</NavLink>
                 </li>
-                <li>
-                  <a className="dropdown-item" href="/#">
-                    Espejos
-                  </a>
+                <li className="dropdown-item">
+                  <NavLink to= "/categoria/sillas">Sillas</NavLink>            
                 </li>
               </ul>
             </li>
