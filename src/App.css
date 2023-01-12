@@ -72,4 +72,9 @@
 .cardPrecio {
   margin: 18px;
   font-size: 20px;
-} 
+}
+.nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+  text-decoration: none;
+}

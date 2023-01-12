@@ -7,18 +7,19 @@ import '../../App.css';
 const ItemListContainer = (greeting) => {
   const [items, setItems] = useState([]);
 
-  const parametro = useParams();
+  const {parametro} = useParams();
 
   useEffect(() => {
+    
     const getProducts = ()=>{
         return new Promise((res,rej)=>{
             const productosFiltrados = productos.filter(
-              (prod)=>prod.categoria === parametro.nombreCategoria
+              (productos)=>productos.categoria === parametro.nombreCategoria
               );
             const filtro= parametro.nombreCategoria ? productosFiltrados : productos;
             setTimeout(()=>{
                 res(filtro);
-            },2000);
+            },1000);
         });
     };
     getProducts()
@@ -32,7 +33,7 @@ const ItemListContainer = (greeting) => {
 
   return (
     <div className="container">
-      <h1 className="bienvenida">{greeting.title}</h1>
+      <h1>{greeting.title}</h1>
       <ItemList items={items} />
     </div>
   );

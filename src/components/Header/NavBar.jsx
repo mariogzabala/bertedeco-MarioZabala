@@ -21,23 +21,23 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item nav-link active" aria-current="page">
-              <NavLink to="/#">Home</NavLink>
+            <li >
+              <NavLink to="/#" className="nav-item nav-link active" aria-current="page">Home</NavLink>
             </li>
-            <li className="nav-item nav-link">
-              <NavLink to="/#">Contacto</NavLink>
+            <li>
+              <NavLink to="/#" className="nav-item nav-link">Contacto</NavLink>
             </li>
-            <li className="nav-item dropdown nav-link dropdown-toggle" >
-              <NavLink to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</NavLink>
+            <li className="nav-item dropdown" >
+              <NavLink to="/" className="nav-link dropdown-toggle"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</NavLink>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li className="dropdown-item">
-                  <NavLink to="/categoria/bancos">Bancos</NavLink>
+                <li>
+                  <NavLink to="/categoria/bancos" className="dropdown-item">Bancos</NavLink>
                 </li>
-                <li className="dropdown-item">
-                  <NavLink to="/categoria/mesas">Mesas</NavLink>
+                <li>
+                  <NavLink to="/categoria/mesas" className="dropdown-item"> Mesas</NavLink>
                 </li>
-                <li className="dropdown-item">
-                  <NavLink to= "/categoria/sillas">Sillas</NavLink>            
+                <li>
+                  <NavLink to="/categoria/sillas" className="dropdown-item">Sillas</NavLink>            
                 </li>
               </ul>
             </li>
@@ -56,8 +56,7 @@ const NavBar = () => {
         </div>
       </div>
       <div>
-        <CartWidget/>
-        <span>2</span>
+        <Link to= "/carrito"><CartWidget/>2</Link>   
       </div>
     </nav>  
   );

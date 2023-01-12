@@ -12,11 +12,11 @@ const ItemDetailContainer = () => {
     const getProduct = () => {
       return new Promise((res, rej) => {
         const productoFiltrado = productos.find(
-          (prod) => prod.id === parseInt(parametro.id)
+          (productos) => productos.id === parseInt(parametro.id)
         );
         setTimeout(() => {
           res(productoFiltrado);
-        }, 2000);
+        }, 1000);
       });
     };
     getProduct()
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  },[parametro.id]);
 
   return <ItemDetail item={item} />;
 };
