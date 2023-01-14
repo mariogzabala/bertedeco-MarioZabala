@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Item = ({producto}) =>{
+export default function Item({producto}) {
   return (
     <div className='item'>
       <img className= 'imgItem' src={producto.img} alt={producto.titulo}/>
@@ -13,4 +13,4 @@ const Item = ({producto}) =>{
     </div>
   )
 }
-export default Item
+

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Carrito = () => {
+export default function Carrito() {
 return (
     <div className='textoDePrueba'>Esta va a ser el carrito</div>
 )
 }
-export default Carrito
+

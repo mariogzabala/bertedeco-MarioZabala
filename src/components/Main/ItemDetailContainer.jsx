@@ -2,9 +2,9 @@ import React from "react";
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../../productos/productos";
+import { productos } from "../../data/productos";
 
-const ItemDetailContainer = () => {
+export default function ItemDetailContainer() {
   const [item, setItem] = useState({});
   const parametro = useParams();
 
@@ -30,4 +30,4 @@ const ItemDetailContainer = () => {
 
   return <ItemDetail item={item} />;
 };
-export default ItemDetailContainer;
+

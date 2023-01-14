@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
-import {productos} from '../../productos/productos'
+import {productos} from '../../data/productos'
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import '../../App.css';
 
-const ItemListContainer = (greeting) => {
+
+export default function ItemListContainer(greeting) {
   const [items, setItems] = useState([]);
 
-  const {parametro} = useParams();
+  const parametro = useParams();
 
   useEffect(() => {
     
     const getProducts = ()=>{
         return new Promise((res,rej)=>{
             const productosFiltrados = productos.filter(
-              (productos)=>productos.categoria === parametro.nombreCategoria
+              (prod)=>prod.categoria === parametro.nombreCategoria
               );
             const filtro= parametro.nombreCategoria ? productosFiltrados : productos;
             setTimeout(()=>{
@@ -29,7 +30,7 @@ const ItemListContainer = (greeting) => {
     .catch((error)=>{
         console.log(error);
     });
-  }, [parametro.nombreCategoria]);
+  },[parametro.nombreCategoria]);
 
   return (
     <div className="container">
@@ -39,4 +40,3 @@ const ItemListContainer = (greeting) => {
   );
 }
 
-export default ItemListContainer

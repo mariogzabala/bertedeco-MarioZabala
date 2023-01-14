@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ItemDetail = ({item}) => {
+export default function ItemDetail({item}) {
   return (
     <div className='containerDetail'>
       <img src={item.img} alt="Producto" />
@@ -18,4 +18,3 @@ const ItemDetail = ({item}) => {
     </div>
   )
 }
-export default ItemDetail
