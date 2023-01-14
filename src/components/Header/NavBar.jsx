@@ -55,8 +55,9 @@ const NavBar = () => {
           </form>          
         </div>
       </div>
-      <div>
-        <Link to= "/carrito"><CartWidget/>2</Link>   
+      <div className="cart">
+        <Link to= "/carrito"><CartWidget/></Link>
+        <span>2</span>
       </div>
     </nav>  
   );
